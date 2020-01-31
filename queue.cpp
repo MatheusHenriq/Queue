@@ -17,7 +17,7 @@ class Queue{
 
 private:
     Node* first;
-    int count = 0;
+    int count;
 
 public:
 
@@ -50,7 +50,7 @@ public:
             aux->next = n;
 
         }
-        
+        count++;
         return 1;
 
     }
@@ -68,7 +68,7 @@ public:
     }
 
     int IsEmpty(){
-        if (first == NULL){
+        if (count == 0){
             return 1;
         }
         else{
@@ -95,6 +95,7 @@ public:
         Node* aux;
         aux  = first;
         first = aux->next;
+        count--;
         delete aux;    
     }
 
